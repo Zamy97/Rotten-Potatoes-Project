@@ -16,6 +16,11 @@
             res.render('review-index', { reviews: reviews });
     })
 
+    const mongoose = require('mongoose');
+    mongoose.connect('mongodb://localhost/rotten-potatoes', { useMongoClient: true });
+
+
+
     app.listen(3000, () => {
         console.log('App Listening on port 3000!')
 
