@@ -11,17 +11,10 @@
         {title: "Great Review"},
         {title: "Next Review"}
     ]
-
-
-
-
+    // INDEX
     app.get('/reviews', (req, res) => {
             res.render('review-index', { reviews: reviews });
     })
-
-
-
-
 
     app.listen(3000, () => {
         console.log('App Listening on port 3000!')
