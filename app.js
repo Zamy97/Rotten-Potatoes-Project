@@ -11,6 +11,15 @@
    //      {title: "Great Review"},
    //      {title: "Next Review"}
    //  ]
+
+    // new
+    app.get('/reviews/new', (req, res) => {
+  res.render('reviews-new', {});
+    })
+
+
+
+
     // INDEX
     app.get('/reviews', (req, res) => {
         Review.find().then(reviews => {
