@@ -1,5 +1,9 @@
 
+/tmp
+/out-tsc
 
+# Runtime data
+pids
 *.pid
 *.seed
 *.pid.lock
