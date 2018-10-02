@@ -4,9 +4,10 @@ module.exports = function(app) {
 
     app.get('/', (req, res) => {
         Review.find()
-        .then(rvws => {
-            res.render('reviews-index', {reviews: rvws});
+        .then(review => {
+            res.render('reviews-index', {review: review});
         }).catch(error => {
+            console.log("hello /")
             console.log(error);
         });
     });
@@ -20,23 +21,25 @@ module.exports = function(app) {
         .then(review => {
             res.redirect(`/reviews/${review._id}`);
         }).catch(error => {
+            console.log("vantaggio /reviews")
             console.log(error.message);
         });
     });
 
     app.get('/reviews/:id', (req, res) => {
         Review.findById(req.params.id)
-        .then(rvw => {
-            res.render('reviews-show', {review: rvw});
+        .then(review => {
+            res.render('reviews-show', {review: review});
         }).catch(error => {
+            console.log("Chips not working")
             console.log(error);
         });
     });
 
     app.get('/reviews/:id/edit', (req, res) => {
         Review.findById(req.params.id)
-        .then(rvw => {
-            res.render('reviews-edit', {review: rvw});
+        .then(review => {
+            res.render('reviews-edit', {review: review});
         }).catch(error => {
             console.log('Error');
         });
@@ -47,6 +50,7 @@ module.exports = function(app) {
         .then(review => {
             res.redirect(`/reviews/${review._id}`);
         }).catch(error => {
+            console.log("Mongod is confusing")
             console.log(error);
         });
     });
