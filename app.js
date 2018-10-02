@@ -1,4 +1,4 @@
- //https://github.com/Zamy97/Rotten-Potatoes-Project.git
+ //https://github.com/Zamy97/Rotten-Potatoes-Project.gits
 
 const express = require('express')
 const exphbs = require('express-handlebars')
