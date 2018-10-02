@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000
 app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.use(bodyParser.urlencoded({ extended: true }))
 
 reviewController(app);
 

@@ -5,7 +5,7 @@ module.exports = function(app) {
     app.get('/', (req, res) => {
         Review.find()
         .then(review => {
-            res.render('reviews-index', {review: review});
+            res.render('reviews-index', {reviews: review});
         }).catch(error => {
             console.log("hello /")
             console.log(error);
@@ -17,6 +17,7 @@ module.exports = function(app) {
     });
 
     app.post('/reviews', (req, res) => {
+        console.log(req.body);
         Review.create(req.body)
         .then(review => {
             res.redirect(`/reviews/${review._id}`);
