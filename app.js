@@ -1,5 +1,6 @@
  //https://github.com/Zamy97/Rotten-Potatoes-Project.gits
 
+const Comment = require('./models/comment')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
@@ -15,5 +16,6 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: true }))
 
 reviewController(app);
+
 
 app.listen(port, console.log(`Running Rotten Potatoes on port ${port}!`));
